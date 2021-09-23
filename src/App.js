@@ -36,30 +36,34 @@ class App extends Component {
 
   render () {
 
-    const todoListNode = this.state.todoList.map((todo, index) => {
+    const todoListCatalog = this.state.todoList.map((todo, index) => {
       return <li key={index}>{todo}</li>
     })
 
 
     return (
       <div>
-        <h1>Counter</h1>
-        <p>{this.state.count}</p>
         <div>
-          <button onClick={()=> this.minus()}>-</button>
-          <button onClick={()=> this.plus()}>+</button>
+          <h1>Counter</h1>
+          <p>{this.state.count}</p>
+          <div>
+            <button onClick={()=> this.minus()}>-</button>
+            <button onClick={()=> this.plus()}>+</button>
+          </div>
         </div>
-        <h4>ToDoList</h4>
-        <p>{this.state.value}</p>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={event => this.onChange(event)}>
-        </input>
-        <button onClick={() => this.add}>ADD</button>
-        <ul>
-          {todoListNode}
-        </ul>
+        <div>
+          <h4>ToDoList</h4>
+          <p>{this.state.value}</p>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={event => this.onChange(event)}>
+          </input>
+          <button onClick={() => this.add}>ADD</button>
+          <ul>
+            {todoListCatalog}
+          </ul>
+        </div>
       </div>
 
     )
